@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spoke &amp; Wrench · January 2026 Income Statement</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --oak: #5c3a1e;
+      --oak-dark: #2b170c;
+      --brass: #c4a35a;
+      --brass-bright: #e6c87a;
+      --lamp: #1f6b45;
+      --lamp-glass: #3cb371;
+      --leather: #3a1f18;
+      --paper: #f3e6c4;
+      --ink: #1a120c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(60, 179, 113, 0.28), transparent 42%),
+        linear-gradient(180deg, #1a0f08 0%, var(--oak-dark) 28%, #4a2c16 100%);
+      min-height: 100vh;
+    }
+    .shade {
+      height: 72px;
+      background: linear-gradient(180deg, #145c38, var(--lamp));
+      box-shadow: 0 24px 40px rgba(60, 179, 113, 0.35);
+      border-bottom: 8px solid var(--brass);
+    }
+    main {
+      width: min(980px, calc(100% - 2rem));
+      margin: -24px auto 3rem;
+      background: var(--paper);
+      border: 10px solid var(--oak);
+      outline: 3px solid var(--brass);
+      box-shadow: 0 24px 50px rgba(0,0,0,0.45);
+      padding: 2rem 2.2rem 2.6rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      letter-spacing: 0.04em;
+    }
+    .brass-rule {
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--brass), var(--brass-bright), var(--brass), transparent);
+      margin: 0.85rem 0 1.1rem;
+    }
+    .lede {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    h2 {
+      margin: 2rem 0 0.7rem;
+      color: var(--leather);
+      border-bottom: 2px solid var(--brass);
+      padding-bottom: 0.25rem;
+    }
+    .totals {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    .totals div {
+      background: var(--leather);
+      color: var(--paper);
+      padding: 0.9rem 1rem;
+      border-top: 4px solid var(--brass);
+    }
+    .totals span {
+      display: block;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brass-bright);
+    }
+    .totals strong {
+      font-size: 1.55rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1.02rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.45rem 0.4rem;
+      border-bottom: 1px solid rgba(92, 58, 30, 0.25);
+      vertical-align: top;
+    }
+    th {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--oak);
+    }
+    .num {
+      font-family: "IBM Plex Mono", monospace;
+      white-space: nowrap;
+      text-align: right;
+    }
+    .sources { font-size: 0.92rem; color: #4a3424; }
+    .ticket {
+      background: #efe0b8;
+      border-left: 6px solid var(--lamp);
+      padding: 0.8rem 1rem;
+      margin: 0.65rem 0;
+    }
+    .ticket.brass { border-left-color: var(--brass); }
+    .ticket h3 { margin: 0 0 0.3rem; }
+    .meta { margin: 0.2rem 0; }
+    ul { margin: 0.3rem 0 0 1.1rem; }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: #5a4030;
+    }
+    @media (max-width: 720px) {
+      .totals { grid-template-columns: 1fr; }
+      main { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shade"></div>
+  <main>
+    <header>
+      <h1>Spoke &amp; Wrench Bicycle Repair</h1>
+      <div class="brass-rule"></div>
+      <p class="lede">January income statement · Period 2026-01 · 142 Crown Street, New Haven</p>
+    </header>
+
+    <section>
+      <h2>January income statement</h2>
+      <div class="totals">
+        <div><span>Revenue</span><strong>$8,150.00</strong></div>
+        <div><span>Total expenses</span><strong>$4,618.32</strong></div>
+        <div><span>Net income</span><strong>$3,531.68</strong></div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Expense</th><th>Category</th><th class="num">Amount</th><th>Sources</th></tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td>rent check 1042</td>
+              <td>rent</td>
+              <td class="num">$1,800.00</td>
+              <td class="sources">bank_transactions.json, bank_statement_jan2026.pdf</td>
+            </tr>
+            
+
+            <tr>
+              <td>eversource utilities</td>
+              <td>utilities</td>
+              <td class="num">$186.42</td>
+              <td class="sources">bank_transactions.json, bank_statement_jan2026.pdf</td>
+            </tr>
+            
+
+            <tr>
+              <td>comcast business internet</td>
+              <td>utilities</td>
+              <td class="num">$89.99</td>
+              <td class="sources">bank_transactions.json, bank_statement_jan2026.pdf</td>
+            </tr>
+            
+
+            <tr>
+              <td>nhbp restocks check</td>
+              <td>cogs_parts</td>
+              <td class="num">$742.18</td>
+              <td class="sources">bank_transactions.json, bank_statement_jan2026.pdf, email_owner_voice_memo.txt, receipt_nhbp_parts.pdf</td>
+            </tr>
+            
+
+            <tr>
+              <td>state farm liability insurance</td>
+              <td>insurance</td>
+              <td class="num">$214.00</td>
+              <td class="sources">bank_transactions.json, bank_statement_jan2026.pdf</td>
+            </tr>
+            
+
+            <tr>
+              <td>bank monthly service fee</td>
+              <td>bank_fees</td>
+              <td class="num">$15.00</td>
+              <td class="sources">bank_transactions.json, bank_statement_jan2026.pdf</td>
+            </tr>
+            
+
+            <tr>
+              <td>park tool receipt vs card</td>
+              <td>tools_equipment</td>
+              <td class="num">$127.40</td>
+              <td class="sources">receipt_park_tool.pdf, credit_card_transactions.json, credit_card_jan2026.pdf, email_owner_voice_memo.txt</td>
+            </tr>
+            
+
+            <tr>
+              <td>park tool vendor portal</td>
+              <td>tools_equipment</td>
+              <td class="num">$344.55</td>
+              <td class="sources">bank_transactions.json, bank_statement_jan2026.pdf</td>
+            </tr>
+            
+
+            <tr>
+              <td>staples office supplies</td>
+              <td>office</td>
+              <td class="num">$43.17</td>
+              <td class="sources">credit_card_transactions.json, credit_card_jan2026.pdf</td>
+            </tr>
+            
+
+            <tr>
+              <td>ebay repair stand</td>
+              <td>tools_equipment</td>
+              <td class="num">$425.00</td>
+              <td class="sources">ebay_repair_stand.pdf, credit_card_transactions.json, credit_card_jan2026.pdf</td>
+            </tr>
+            
+
+            <tr>
+              <td>rei high vis jacket</td>
+              <td>tools_equipment</td>
+              <td class="num">$156.00</td>
+              <td class="sources">credit_card_transactions.json, credit_card_jan2026.pdf, email_owner_voice_memo.txt</td>
+            </tr>
+            
+
+            <tr>
+              <td>speedy courier receipt card</td>
+              <td>shipping</td>
+              <td class="num">$28.00</td>
+              <td class="sources">receipt_courier.pdf, credit_card_transactions.json, credit_card_jan2026.pdf, email_owner_voice_memo.txt</td>
+            </tr>
+            
+
+            <tr>
+              <td>home depot receipt card</td>
+              <td>supplies</td>
+              <td class="num">$67.12</td>
+              <td class="sources">receipt_home_depot.pdf, credit_card_transactions.json, credit_card_jan2026.pdf, email_owner_voice_memo.txt</td>
+            </tr>
+            
+
+            <tr>
+              <td>nhbp counter invoice card</td>
+              <td>cogs_parts</td>
+              <td class="num">$218.40</td>
+              <td class="sources">receipt_nhbp_parts.pdf, credit_card_transactions.json, credit_card_jan2026.pdf, email_owner_voice_memo.txt</td>
+            </tr>
+            
+
+            <tr>
+              <td>yale printing services</td>
+              <td>marketing</td>
+              <td class="num">$89.00</td>
+              <td class="sources">credit_card_transactions.json, credit_card_jan2026.pdf</td>
+            </tr>
+            
+
+            <tr>
+              <td>shell business fuel</td>
+              <td>fuel</td>
+              <td class="num">$52.10</td>
+              <td class="sources">credit_card_transactions.json, credit_card_jan2026.pdf</td>
+            </tr>
+            
+
+            <tr>
+              <td>amazon web services</td>
+              <td>software</td>
+              <td class="num">$19.99</td>
+              <td class="sources">credit_card_transactions.json, credit_card_jan2026.pdf</td>
+            </tr>
+            
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Excluded personal rows</h2>
+      
+            <article class="ticket">
+              <h3>owner_draw_savings</h3>
+              <p class="meta">Booked amount: <strong>$0.00</strong></p>
+              <p class="meta">Amounts seen: bank_transactions.json: $900.00, bank_statement_jan2026.pdf: $900.00</p>
+              <p>The transfer to savings is explicitly marked personal and owner draw, not an income statement expense.</p>
+            </article>
+            
+
+            <article class="ticket">
+              <h3>owner_draw_atm</h3>
+              <p class="meta">Booked amount: <strong>$0.00</strong></p>
+              <p class="meta">Amounts seen: bank_transactions.json: $200.00, bank_statement_jan2026.pdf: $200.00</p>
+              <p>The ATM withdrawal is explicitly marked personal cash and owner draw, not a business expense.</p>
+            </article>
+            
+
+            <article class="ticket">
+              <h3>amazon_headphones_personal</h3>
+              <p class="meta">Booked amount: <strong>$0.00</strong></p>
+              <p class="meta">Amounts seen: receipt_amazon_headphones.pdf: $89.99, credit_card_transactions.json: $89.99, credit_card_jan2026.pdf: $89.99</p>
+              <p>The receipt and card charge are the same $89.99 headphone purchase. The owner identifies the headphones as personal commute headphones, so the matched purchase is excluded.</p>
+            </article>
+            
+
+            <article class="ticket">
+              <h3>instacart_personal</h3>
+              <p class="meta">Booked amount: <strong>$0.00</strong></p>
+              <p class="meta">Amounts seen: credit_card_transactions.json: $64.22, credit_card_jan2026.pdf: $64.22</p>
+              <p>The Instacart grocery charge is classified as personal and is excluded from the income statement.</p>
+            </article>
+            
+
+            <article class="ticket">
+              <h3>netflix_personal</h3>
+              <p class="meta">Booked amount: <strong>$0.00</strong></p>
+              <p class="meta">Amounts seen: credit_card_transactions.json: $15.49, credit_card_jan2026.pdf: $15.49</p>
+              <p>The Netflix subscription is classified as personal and is excluded from the income statement.</p>
+            </article>
+            
+    </section>
+
+    <section>
+      <h2>Excluded business rows</h2>
+      
+            <article class="ticket">
+              <h3>hartford_mutual_march_quote</h3>
+              <p class="meta">Booked amount: <strong>$0.00</strong></p>
+              <p class="meta">Amounts seen: quote_hartford_mutual_fleet.pdf: $6,593.70, email_fleet_wellness.txt: $6,800.00</p>
+              <p>The quote totals $6,593.70 including tax, while the customer&#x27;s email states an approved budget of $6,800. Both documents concern March 2026 work, and the email says payment is not expected until February, so this is not January revenue.</p>
+            </article>
+            
+
+            <article class="ticket">
+              <h3>mike_smith_iou</h3>
+              <p class="meta">Booked amount: <strong>$0.00</strong></p>
+              <p class="meta">Amounts seen: iou_mike_smith.pdf: $180.00, email_owner_voice_memo.txt: $180.00</p>
+              <p>The $180 tune-up IOU has not been collected and does not appear in the January bank transactions. It is therefore excluded from January revenue.</p>
+            </article>
+            
+    </section>
+
+    <section>
+      <h2>Judgment calls</h2>
+      
+            <article class="ticket brass">
+              <h3>mixed_square_deposit_personal_portion</h3>
+              <p class="meta">Included: <strong>yes</strong>
+              · Amount used: <strong>$465.00</strong>
+              · Confidence: <strong>medium</strong></p>
+              <p class="meta">Evidence</p>
+              <ul><li>bank_statement_jan2026.pdf</li><li>output/bank_transactions.json</li><li>email_owner_voice_memo.txt</li></ul>
+            </article>
+            
+
+            <article class="ticket brass">
+              <h3>hartford_mutual_march_quote</h3>
+              <p class="meta">Included: <strong>no</strong>
+              · Amount used: <strong>$0.00</strong>
+              · Confidence: <strong>low</strong></p>
+              <p class="meta">Evidence</p>
+              <ul><li>quote_hartford_mutual_fleet.pdf</li><li>email_fleet_wellness.txt</li><li>email_owner_voice_memo.txt</li></ul>
+            </article>
+            
+
+            <article class="ticket brass">
+              <h3>park_tool_receipt_vs_card</h3>
+              <p class="meta">Included: <strong>yes</strong>
+              · Amount used: <strong>$127.40</strong>
+              · Confidence: <strong>medium</strong></p>
+              <p class="meta">Evidence</p>
+              <ul><li>receipt_park_tool.pdf</li><li>credit_card_jan2026.pdf</li><li>output/credit_card_transactions.json</li><li>email_owner_voice_memo.txt</li></ul>
+            </article>
+            
+    </section>
+
+    <footer>
+      Figures are copied from output JSON files. Totals are not recalculated on this page.
+    </footer>
+  </main>
+</body>
+</html>
