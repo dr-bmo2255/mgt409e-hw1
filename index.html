@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spoke &amp; Wrench Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --oak: #5c3a1e; --oak-dark: #2b170c; --brass: #c4a35a; --brass-bright: #e6c87a; --lamp: #1f6b45; --leather: #3a1f18; --paper: #f3e6c4; --ink: #1a120c; }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: var(--ink); font: 500 1.15rem/1.5 "Cormorant Garamond", Georgia, serif;
+    background: radial-gradient(ellipse at 50% 0%, rgba(60,179,113,.28), transparent 42%), linear-gradient(180deg, #1a0f08, var(--oak-dark) 28%, #4a2c16); min-height: 100vh; }
+  .shade { height: 72px; background: linear-gradient(180deg, #145c38, var(--lamp)); box-shadow: 0 24px 40px rgba(60,179,113,.35); border-bottom: 8px solid var(--brass); }
+  main { width: min(980px, calc(100% - 32px)); margin: -24px auto 3rem; padding: clamp(1.1rem, 4vw, 2.4rem); background: var(--paper); border: 10px solid var(--oak); outline: 3px solid var(--brass); box-shadow: 0 24px 50px rgba(0,0,0,.45); }
+  h1 { margin: 0; font-size: clamp(2.1rem, 6vw, 3.3rem); line-height: 1.1; }
+  h2 { margin: 2.3rem 0 .6rem; color: var(--leather); font-size: 1.7rem; border-bottom: 2px solid var(--brass); padding-bottom: .25rem; }
+  h3 { margin: 0 0 .2rem; font-size: 1.25rem; }
+  p { margin: .35rem 0; }
+  .lede { font-size: 1.3rem; }
+  .buttons { display: flex; flex-wrap: wrap; gap: .7rem; margin: 1.2rem 0 0; }
+  .btn { padding: .6rem 1rem; color: var(--paper); background: var(--lamp); border: 1px solid var(--brass); font: 600 .8rem "IBM Plex Mono", monospace; text-decoration: none; }
+  .btn.primary { color: var(--ink); background: var(--brass-bright); }
+  .btn:hover { filter: brightness(1.12); }
+  .btn:focus-visible { outline: 3px solid var(--leather); outline-offset: 2px; }
+  .totals { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; }
+  .totals div { padding: .9rem 1rem; color: var(--paper); background: var(--leather); border-top: 4px solid var(--brass); }
+  .totals span { display: block; color: var(--brass-bright); font: 600 .75rem "IBM Plex Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+  .totals strong { font-size: 1.6rem; }
+  .steps { margin: .4rem 0 0; padding-left: 1.4rem; }
+  .steps li { margin: .3rem 0; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: .4rem; text-align: left; vertical-align: top; border-bottom: 1px solid rgba(92,58,30,.25); }
+  th { color: var(--oak); font: 600 .72rem "IBM Plex Mono", monospace; text-transform: uppercase; }
+  th.num, td.num { text-align: right; white-space: nowrap; font-family: "IBM Plex Mono", monospace; font-size: .92rem; }
+  tfoot td { font-weight: 700; border-top: 2px solid var(--oak); border-bottom: 0; }
+  .ticket { margin: .7rem 0; padding: .8rem 1rem; background: #efe0b8; border-left: 6px solid var(--lamp); }
+  .ticket.brass { border-left-color: var(--brass); }
+  .booked { color: var(--oak); font: 600 .85rem "IBM Plex Mono", monospace; }
+  .seen { color: #4a3424; font-size: .95rem; overflow-wrap: anywhere; }
+  footer { margin-top: 2rem; color: #5a4030; font-size: 1rem; }
+  @media (max-width: 720px) { .totals { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="shade"></div>
+<main>
+  <header>
+    <h1>Spoke &amp; Wrench Bicycle Repair</h1>
+    <p class="lede">AI reads a bike shop's messy January paperwork, and Python and a human turn it into an income statement you can trace back to the documents.</p>
+    <div class="buttons">
+      <a class="btn primary" href="output/pipeline.html">See the workflow map</a>
+      <a class="btn" href="output/income_statement.html">Open the submitted report</a>
+      <a class="btn" href="https://github.com/dr-bmo2255/mgt409e-hw1">View on GitHub</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>The result: January 2026</h2>
+    <div class="totals">
+      <div><span>Revenue</span><strong>$8,150.00</strong></div>
+      <div><span>Expenses</span><strong>$4,618.32</strong></div>
+      <div><span>Net income</span><strong>$3,531.68</strong></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><strong>Extract:</strong> an LLM turns the receipts, bank statement and card statement into structured data.</li>
+      <li><strong>Reconcile:</strong> an LLM matches amounts across documents and proposes one decision for each.</li>
+      <li><strong>Decide:</strong> the student makes the final call on the three hardest items.</li>
+      <li><strong>Report:</strong> plain Python, with no LLM, adds up the totals and builds the page.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Where the paperwork didn't agree</h2>
+    <article class='ticket'><h3>A deposit that was partly personal</h3><p class='booked'>Booked: $465.00</p><p>The bank deposit was $560, but the owner memo identifies $95 as a roommate&#x27;s personal tune-up. Only the remaining $465 is booked as January business revenue.</p><p class='seen'>Amounts seen: bank_transactions.json: $560.00 · bank_statement_jan2026.pdf: $560.00 · email_owner_voice_memo.txt: $95.00</p></article><article class='ticket'><h3>A receipt smaller than the card charge</h3><p class='booked'>Booked: $127.40</p><p>The $88.70 receipt is part of the $127.40 Park Tool card charge. The receipt explains that the additional $38.70 back-ordered spanner shipped later, so the full card charge is booked once, not both amounts.</p><p class='seen'>Amounts seen: receipt_park_tool.pdf: $88.70 · credit_card_transactions.json: $127.40 · credit_card_jan2026.pdf: $127.40</p></article><article class='ticket'><h3>Two orders from one vendor</h3><p class='booked'>Booked: $742.18</p><p>The $742.18 New Haven Bike Parts check on January 18 is the separate restock order paid by business check #1043. The receipt PDF totals $218.40 for a different counter invoice and explicitly says not to combine the two orders. Book the check once as parts COGS.</p><p class='seen'>Amounts seen: bank_transactions.json: $742.18 · bank_statement_jan2026.pdf: $742.18 · receipt_nhbp_parts.pdf: $218.40</p></article><article class='ticket'><h3>One purchase in two documents</h3><p class='booked'>Booked: $28.00</p><p>The $28 receipt and matching card charge are for the same emergency tube delivery. Count the shipping expense once.</p><p class='seen'>Amounts seen: receipt_courier.pdf: $28.00 · credit_card_transactions.json: $28.00 · credit_card_jan2026.pdf: $28.00</p></article><article class='ticket'><h3>A personal purchase on the card</h3><p class='booked'>Booked: $0.00</p><p>The receipt and card charge are the same $89.99 headphone purchase. The owner identifies the headphones as personal commute headphones, so the matched purchase is excluded.</p><p class='seen'>Amounts seen: receipt_amazon_headphones.pdf: $89.99 · credit_card_transactions.json: $89.99 · credit_card_jan2026.pdf: $89.99</p></article><article class='ticket'><h3>A big quote that isn&#x27;t January revenue</h3><p class='booked'>Booked: $0.00</p><p>The quote totals $6,593.70 including tax, while the customer&#x27;s email states an approved budget of $6,800. Both documents concern March 2026 work, and the email says payment is not expected until February, so this is not January revenue.</p><p class='seen'>Amounts seen: quote_hartford_mutual_fleet.pdf: $6,593.70 · email_fleet_wellness.txt: $6,800.00</p></article><article class='ticket'><h3>Money owed but not collected</h3><p class='booked'>Booked: $0.00</p><p>The $180 tune-up IOU has not been collected and does not appear in the January bank transactions. It is therefore excluded from January revenue.</p><p class='seen'>Amounts seen: iou_mike_smith.pdf: $180.00 · email_owner_voice_memo.txt: $180.00</p></article>
+  </section>
+
+  <section>
+    <h2>The three human judgment calls</h2>
+    <article class='ticket brass'><h3>Mixed Square deposit personal portion</h3><p class='booked'>$465.00 · medium confidence</p><p>Included at $465, the business portion of the $560 deposit.</p></article><article class='ticket brass'><h3>Hartford Mutual March quote</h3><p class='booked'>$0.00 · low confidence</p><p>Not included for January. Contract only, with no service yet. Revisit next month.</p></article><article class='ticket brass'><h3>Park Tool receipt vs card</h3><p class='booked'>$127.40 · medium confidence</p><p>Included at $127.40. The spanner shipped 1/12 and is presumed received by month-end. The $344.55 Park Tool debit stays a separate row.</p></article>
+  </section>
+
+  <section>
+    <h2>Revenue</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Date</th><th>Deposit</th><th class="num">In bank</th><th class="num">Booked</th></tr></thead>
+      <tbody><tr><td>2026-01-03</td><td>Square *Walk-in tune-ups</td><td class='num'>$420.00</td><td class='num'>$420.00</td></tr><tr><td>2026-01-05</td><td>Yale Health employee bike svc</td><td class='num'>$1,150.00</td><td class='num'>$1,150.00</td></tr><tr><td>2026-01-08</td><td>Square *Brake jobs / chains</td><td class='num'>$315.00</td><td class='num'>$315.00</td></tr><tr><td>2026-01-12</td><td>City of NH fleet maintenance inv #884</td><td class='num'>$2,400.00</td><td class='num'>$2,400.00</td></tr><tr><td>2026-01-15</td><td>Cash &amp; card walk-ins (see owner notes)</td><td class='num'>$560.00</td><td class='num'>$465.00</td></tr><tr><td>2026-01-20</td><td>St. Raphael custom build final pmt</td><td class='num'>$1,850.00</td><td class='num'>$1,850.00</td></tr><tr><td>2026-01-24</td><td>Square weekend rush jobs</td><td class='num'>$980.00</td><td class='num'>$980.00</td></tr><tr><td>2026-01-28</td><td>Westville PTO bike safety event</td><td class='num'>$570.00</td><td class='num'>$570.00</td></tr></tbody>
+      <tfoot><tr><td colspan="3">Total revenue</td><td class="num">$8,150.00</td></tr></tfoot>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>Expenses</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Expense</th><th>Category</th><th class="num">Amount</th></tr></thead>
+      <tbody><tr><td>Rent check 1042</td><td>rent</td><td class='num'>$1,800.00</td></tr><tr><td>Eversource utilities</td><td>utilities</td><td class='num'>$186.42</td></tr><tr><td>Comcast business internet</td><td>utilities</td><td class='num'>$89.99</td></tr><tr><td>NH Bike Parts restocks check</td><td>cogs parts</td><td class='num'>$742.18</td></tr><tr><td>State Farm liability insurance</td><td>insurance</td><td class='num'>$214.00</td></tr><tr><td>Bank monthly service fee</td><td>bank fees</td><td class='num'>$15.00</td></tr><tr><td>Park Tool receipt vs card</td><td>tools equipment</td><td class='num'>$127.40</td></tr><tr><td>Park Tool vendor portal</td><td>tools equipment</td><td class='num'>$344.55</td></tr><tr><td>Staples office supplies</td><td>office</td><td class='num'>$43.17</td></tr><tr><td>eBay repair stand</td><td>tools equipment</td><td class='num'>$425.00</td></tr><tr><td>REI high vis jacket</td><td>tools equipment</td><td class='num'>$156.00</td></tr><tr><td>Speedy Courier receipt card</td><td>shipping</td><td class='num'>$28.00</td></tr><tr><td>Home Depot receipt card</td><td>supplies</td><td class='num'>$67.12</td></tr><tr><td>NH Bike Parts counter invoice card</td><td>cogs parts</td><td class='num'>$218.40</td></tr><tr><td>Yale Printing services</td><td>marketing</td><td class='num'>$89.00</td></tr><tr><td>Shell business fuel</td><td>fuel</td><td class='num'>$52.10</td></tr><tr><td>Amazon Web Services</td><td>software</td><td class='num'>$19.99</td></tr></tbody>
+      <tfoot><tr><td colspan="2">Total expenses</td><td class="num">$4,618.32</td></tr></tfoot>
+    </table></div>
+  </section>
+
+  <footer>Class project for Yale SOM MGT 409E, AI Foundations for Managers. This page shows the saved results of one pipeline run; it doesn't call an LLM. The source PDFs and emails are kept private.</footer>
+</main>
+</body>
+</html>

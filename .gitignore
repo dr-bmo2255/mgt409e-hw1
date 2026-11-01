@@ -1,0 +1,5 @@
+.env
+.venv/
+__pycache__/
+hw1_spoke_and_wrench/
+hw1_spoke_and_wrench.zip

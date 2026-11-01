@@ -1,0 +1,36 @@
+[
+  {
+    "transaction_id": "mixed_square_deposit_personal_portion",
+    "included_in_income_statement": "yes",
+    "amount_used_in_income_statement": 465.0,
+    "evidence_for": [
+      "bank_statement_jan2026.pdf",
+      "output/bank_transactions.json",
+      "email_owner_voice_memo.txt"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "transaction_id": "hartford_mutual_march_quote",
+    "included_in_income_statement": "no",
+    "amount_used_in_income_statement": 0.0,
+    "evidence_for": [
+      "quote_hartford_mutual_fleet.pdf",
+      "email_fleet_wellness.txt",
+      "email_owner_voice_memo.txt"
+    ],
+    "confidence": "low"
+  },
+  {
+    "transaction_id": "park_tool_receipt_vs_card",
+    "included_in_income_statement": "yes",
+    "amount_used_in_income_statement": 127.4,
+    "evidence_for": [
+      "receipt_park_tool.pdf",
+      "credit_card_jan2026.pdf",
+      "output/credit_card_transactions.json",
+      "email_owner_voice_memo.txt"
+    ],
+    "confidence": "medium"
+  }
+]

@@ -1,0 +1,173 @@
+{
+  "period": "2026-01",
+  "revenue_usd": 8150.0,
+  "expense_lines": [
+    {
+      "label": "rent check 1042",
+      "amount_usd": 1800.0,
+      "category": "rent",
+      "sources": [
+        "bank_transactions.json",
+        "bank_statement_jan2026.pdf"
+      ]
+    },
+    {
+      "label": "eversource utilities",
+      "amount_usd": 186.42,
+      "category": "utilities",
+      "sources": [
+        "bank_transactions.json",
+        "bank_statement_jan2026.pdf"
+      ]
+    },
+    {
+      "label": "comcast business internet",
+      "amount_usd": 89.99,
+      "category": "utilities",
+      "sources": [
+        "bank_transactions.json",
+        "bank_statement_jan2026.pdf"
+      ]
+    },
+    {
+      "label": "nhbp restocks check",
+      "amount_usd": 742.18,
+      "category": "cogs_parts",
+      "sources": [
+        "bank_transactions.json",
+        "bank_statement_jan2026.pdf",
+        "email_owner_voice_memo.txt",
+        "receipt_nhbp_parts.pdf"
+      ]
+    },
+    {
+      "label": "state farm liability insurance",
+      "amount_usd": 214.0,
+      "category": "insurance",
+      "sources": [
+        "bank_transactions.json",
+        "bank_statement_jan2026.pdf"
+      ]
+    },
+    {
+      "label": "bank monthly service fee",
+      "amount_usd": 15.0,
+      "category": "bank_fees",
+      "sources": [
+        "bank_transactions.json",
+        "bank_statement_jan2026.pdf"
+      ]
+    },
+    {
+      "label": "park tool receipt vs card",
+      "amount_usd": 127.4,
+      "category": "tools_equipment",
+      "sources": [
+        "receipt_park_tool.pdf",
+        "credit_card_transactions.json",
+        "credit_card_jan2026.pdf",
+        "email_owner_voice_memo.txt"
+      ]
+    },
+    {
+      "label": "park tool vendor portal",
+      "amount_usd": 344.55,
+      "category": "tools_equipment",
+      "sources": [
+        "bank_transactions.json",
+        "bank_statement_jan2026.pdf"
+      ]
+    },
+    {
+      "label": "staples office supplies",
+      "amount_usd": 43.17,
+      "category": "office",
+      "sources": [
+        "credit_card_transactions.json",
+        "credit_card_jan2026.pdf"
+      ]
+    },
+    {
+      "label": "ebay repair stand",
+      "amount_usd": 425.0,
+      "category": "tools_equipment",
+      "sources": [
+        "ebay_repair_stand.pdf",
+        "credit_card_transactions.json",
+        "credit_card_jan2026.pdf"
+      ]
+    },
+    {
+      "label": "rei high vis jacket",
+      "amount_usd": 156.0,
+      "category": "tools_equipment",
+      "sources": [
+        "credit_card_transactions.json",
+        "credit_card_jan2026.pdf",
+        "email_owner_voice_memo.txt"
+      ]
+    },
+    {
+      "label": "speedy courier receipt card",
+      "amount_usd": 28.0,
+      "category": "shipping",
+      "sources": [
+        "receipt_courier.pdf",
+        "credit_card_transactions.json",
+        "credit_card_jan2026.pdf",
+        "email_owner_voice_memo.txt"
+      ]
+    },
+    {
+      "label": "home depot receipt card",
+      "amount_usd": 67.12,
+      "category": "supplies",
+      "sources": [
+        "receipt_home_depot.pdf",
+        "credit_card_transactions.json",
+        "credit_card_jan2026.pdf",
+        "email_owner_voice_memo.txt"
+      ]
+    },
+    {
+      "label": "nhbp counter invoice card",
+      "amount_usd": 218.4,
+      "category": "cogs_parts",
+      "sources": [
+        "receipt_nhbp_parts.pdf",
+        "credit_card_transactions.json",
+        "credit_card_jan2026.pdf",
+        "email_owner_voice_memo.txt"
+      ]
+    },
+    {
+      "label": "yale printing services",
+      "amount_usd": 89.0,
+      "category": "marketing",
+      "sources": [
+        "credit_card_transactions.json",
+        "credit_card_jan2026.pdf"
+      ]
+    },
+    {
+      "label": "shell business fuel",
+      "amount_usd": 52.1,
+      "category": "fuel",
+      "sources": [
+        "credit_card_transactions.json",
+        "credit_card_jan2026.pdf"
+      ]
+    },
+    {
+      "label": "amazon web services",
+      "amount_usd": 19.99,
+      "category": "software",
+      "sources": [
+        "credit_card_transactions.json",
+        "credit_card_jan2026.pdf"
+      ]
+    }
+  ],
+  "total_expenses_usd": 4618.32,
+  "net_income_usd": 3531.68
+}
